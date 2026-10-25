@@ -7,11 +7,17 @@ struct cg{// structure to hold x and y coordinates and mass
 
 int readin( void)
 {
-    int num, i;                 
+    int num, i;    
+
+    printf("Enter the number of weights: ");    
     scanf("%d", &num);
 
-    for (i = 0; i < num; i++)
+    for (i = 0; i < num; i++) {
+        printf("Enter x coordinate, y coordinate, and mass for weight %d: ", i + 1);
         scanf("%f %f %f", &masses[i].x, &masses[i].y, &masses[i].mass);
+
+    }
+        
     return num;
 
 }
@@ -26,7 +32,7 @@ void computecg( int n_masses)
         sum_of_mass += masses[i].mass;
     }
 
-    printf("CoG coordinates are: x = %.2f, y = %.2f\n", sum_of_xmass / sum_of_mass, sum_of_ymass / sum_of_mass);
+    printf("CoG coordinates are: x = %.2f y = %.2f\n", sum_of_xmass / sum_of_mass, sum_of_ymass / sum_of_mass);
 
 }
 int main( void )
