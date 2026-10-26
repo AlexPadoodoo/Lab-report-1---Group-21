@@ -16,7 +16,7 @@ int readin( void)
     }
 
     if (num < 1 || num > MAX) {
-        printf("Error: number of weights must be between 1 and %d", MAX);
+        printf("Error: number of weights must be between 1 and %d! ", MAX);
         return 0;
     }
 
