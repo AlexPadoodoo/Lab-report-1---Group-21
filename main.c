@@ -45,7 +45,7 @@ void computecg( int n_masses)
 
     if (sum_of_mass == 0){
         printf("Error: total mass is zero! \n");
-        return 0;
+        return;
     }
 
     printf("CoG coordinates are: x = %.2f y = %.2f\n", sum_of_xmass / sum_of_mass, sum_of_ymass / sum_of_mass);
