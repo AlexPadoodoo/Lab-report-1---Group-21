@@ -16,7 +16,7 @@ int readin( void)
     }
 
     if (num < 1 || num > MAX) {
-        printf("Error: number of weights must be between 1 and %d! ", MAX);
+        printf("Error: number of weights must be between 1 and %d! \n", MAX);
         return 0;
     }
 
@@ -41,6 +41,11 @@ void computecg( int n_masses)
         sum_of_xmass += masses[i].x * masses[i].mass;
         sum_of_ymass += masses[i].y * masses[i].mass;
         sum_of_mass += masses[i].mass;
+    }
+
+    if (sum_of_mass == 0){
+        printf("Error: total mass is zero! \n");
+        return 0;
     }
 
     printf("CoG coordinates are: x = %.2f y = %.2f\n", sum_of_xmass / sum_of_mass, sum_of_ymass / sum_of_mass);
