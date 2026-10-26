@@ -10,11 +10,22 @@ int readin( void)
     int num, i;    
 
     printf("Enter the number of weights: ");    
-    scanf("%d", &num);
+    if (scanf("%d", &num) != 1) {
+        printf("Error: please enter a whole number! \n");
+        return 0;
+    }
+
+    if (num < 1 || num > MAX) {
+        printf("Error: number of weights must be between 1 and %d", MAX);
+        return 0;
+    }
 
     for (i = 0; i < num; i++) {
         printf("Enter x coordinate, y coordinate, and mass for weight %d: ", i + 1);
-        scanf("%f %f %f", &masses[i].x, &masses[i].y, &masses[i].mass);
+        if (scanf("%f %f %f", &masses[i].x, &masses[i].y, &masses[i].mass) != 3){
+            printf("Error: please enter only three numbers! \n");
+            return 0;
+        }
 
     }
         
